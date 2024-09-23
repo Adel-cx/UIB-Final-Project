@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <title>Contact Us</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ffcc00;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: slideDown 1s ease-out 0.5s forwards;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        a {
+            color: #00bfff;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -3px;
+            left: 0;
+            background-color: #00bfff;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #ff4500;
+        }
+
+        a:hover::after {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out 1s forwards;
+        }
+
+        /* Button Styling */
+        .contact-info a {
+            padding: 8px 15px;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: background-color 0.3s, border 0.3s;
+        }
+
+        .contact-info a:hover {
+            background-color: #ff4500;
+            color: #fff;
+            border-color: #ff4500;
+        }
+
+        /* Custom Button */
+        .main-site-btn {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #00bfff;
+            color: #ffffff;
+            border: 2px solid #00bfff;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .main-site-btn:hover {
+            background-color: transparent;
+            color: #00bfff;
+            border-color: #00bfff;
+        }
+
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .main-site-btn {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Feel free to reach out via the methods below:</p>
+
+        <div class="contact-info">
+            <p>Email: <a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+            <p>Follow us on social media:</p>
+            <p>
+                <a href="#">Twitter</a> |
+                <a href="#">Facebook</a> |
+                <a href="#">Instagram</a>
+            </p>
+        </div>
+
+
+        <button class="main-site-btn" onclick="goToMainSite()">Go to Home</button>
+    </div>
+
+    <script>
+        // Function to redirect to the main site
+        function goToMainSite() {
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+
+</html>

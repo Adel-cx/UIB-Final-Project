@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
+  color: #fff;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3em;
+  animation: fadeIn 2s ease-in-out;
+}
+
+p {
+  font-size: 1.5em;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.message {
+  position: absolute;
+  bottom: 20px;
+  animation: fadeIn 4s ease-in-out forwards;
+  text-align: center;
+}
+
+.message p {
+  font-size: 1.2em;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Moon Animation */
+body::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #ffffff88 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgb(255, 255, 255);
+  animation: moonOrbit 10s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moonOrbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+#goHome {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  color: #ff5722;
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: text-shadow 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#goHome.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#goHome:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+#goHome:hover {
+  text-shadow: 0 0 20px #918f8f, 0 0 40px #a5a19f, 0 0 80px #81706a;
+}
